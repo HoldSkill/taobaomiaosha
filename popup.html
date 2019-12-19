@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Popup</title>
+    <style type="text/css">
+        html {
+            font: 14px/1.5 tahoma, arial, 宋体b8b\4f53
+        }
+
+        p {
+            margin: 0
+        }
+
+        body {
+            width: 400px
+        }
+
+        .notice-top {
+            text-align: center;
+            font-size: 1.3em
+        }
+
+        .notice-top.fail a {
+            color: #B94A48;
+            text-decoration: none
+        }
+
+        .notice-top.success a {
+            color: #468847;
+            text-decoration: none
+        }
+
+        .notice-top.success,
+        .notice-top.fail {
+            border-radius: 5px;
+            line-height: 2em;
+            border-radius: 5px
+        }
+
+        .quickBuy-summary {
+            margin-bottom: 5px
+        }
+
+        .quickBuy-time {
+            font-weight: bold;
+            color: red
+        }
+
+        .quickBuy-sponsor {
+            margin-bottom: 5px;
+            line-height: 1.5em;
+            text-align: center;
+            padding: 5px 0
+        }
+
+        .quickBuy-ads,
+        .quickBuy-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 10px
+        }
+
+        .quickBuy-list.loading {
+            text-align: center
+        }
+
+        .quickBuy-list.noItems {
+            text-align: center;
+            margin: 70px 0
+        }
+
+        .quickBuy-ads {
+            border: 1px solid#eee;
+            border-radius: 2px;
+            position: relative
+        }
+
+        .quickBuy-ads.ads-notice {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            color: #ccc;
+            font-size: 5px;
+            background: #eee;
+            padding: 2px 5px;
+            border-top-left-radius: 5px
+        }
+
+        .quickBuy-item {
+            padding: 5px;
+            border: 1px solid rgba(0, 0, 0, 0);
+            border-radius: 3px
+        }
+
+        .quickBuy-item:hover {
+            border: 1px solid#ccc
+        }
+
+        .quickBuy-item:hover.quickBuy-item-go {
+            display: block
+        }
+
+        .quickBuy-item-prices {
+            margin-top: 8px;
+            color: #aaa
+        }
+
+        .quickBuy-item-gallery {
+            float: left;
+            margin-right: 10px
+        }
+
+        .quickBuy-item-detail {
+            list-style: none;
+            padding: 0
+        }
+
+        .quickBuy-item-go {
+            display: none
+        }
+
+        .quickBuy-item-quickBuyPrice {
+            color: red
+        }
+
+        .quickBuyMore {
+            border: 1px solid transparent;
+            border-radius: 5px;
+            color: #2f96b4;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            line-height: 2em;
+            font-size: 12px
+        }
+
+        .quickBuyMore:hover {
+            border: 1px solid#2f96b4;
+            background-color: rgba(47, 150, 180, 0.07)
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 10px
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: #bbb
+        }
+
+        .seperator {
+            opacity: 0.4
+        }
+
+        .copyright a {
+            color: #ccc;
+            text-decoration: none
+        }
+
+        .copyright a:hover {
+            text-decoration: underline
+        }
+
+        a:focus {
+            outline: none
+        }
+
+        .fn-hide {
+            display: none
+        }
+
+        .success {
+            border: 1px solid#DFF0D8;
+            background-color: #4dff04;
+            color: #468847
+        }
+
+        .runQuickBuy {
+            border: 1px solid#DFF0D8;
+            background-color: #046bff;
+            color: #ffffff;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            line-height: 2em;
+            font-size: 12px
+        }
+
+        .runQuickBuy:hover {
+            border: 1px solid#2f96b4;
+            background-color: rgba(47, 150, 180, 0.07);
+            color: #046bff
+        }
+
+        .fail {
+            color: #B94A48;
+            background-color: #F2DEDE;
+            border-color: #EED3D7
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: " ";
+            display: table
+        }
+
+        .clearfix {
+            clear: both;
+            overflow: hidden
+        }
+    </style>
+</head>
+
+<body>
+    <header class="notice-top" id="status">
+        <p class="loading"><img src="include/img/loading.gif" width="20" alt="loading" /></p>
+        <p class="success fn-hide">秒杀助手II&nbsp;<span class="version"></span>&nbsp;<a
+                href="options.html?ref=optSuccessSettings" target="_blank">[设置]</a>&nbsp;<a
+                href="http://www.6320.net.cn/" target="_blank">[插件主页]</a></p>
+        <p class="fail update fn-hide">有新版本可用，请<a href="http://www.6320.net.cn/1.html" target="_blank">更新</a></p>
+    </header>
+    <section style="text-align:center;margin-top:10px;"><a class="runQuickBuy" href="#" style="width:180px;">执行自动购物</a>
+    </section>
+    <section style="text-align:center;margin-top:10px;margin-bottom:1px;"><a class="clickAddToCartPage" href="#"
+            style="width:180px;">加入手机购物车</a>&nbsp;&nbsp;<a class="clickToCartPage" href="#"
+            style="width:180px;">去手机购物车结算</a></section>
+    <section>
+        <div class="quickBuy-sponsor" id="sponsor"></div>
+    </section>
+    <section class="quickBuy-content">
+        <ul id="J-ads" class="quickBuy-ads fn-hide">
+            <li class="ads-notice">赞助商</li>
+        </ul>
+        <div class="quickBuy-summary" id="J-quickBuySummary"><span id="J-quickBuyStartTime"
+                class="quickBuy-time">00:00</span>即将开秒：</div>
+        <ul class="quickBuy-list" id="J-quickBuyList">
+            <li class="loading"><img src="include/img/loading.gif" width="20" alt="loading" /></li>
+            <li class="noItems fn-hide">暂无秒杀推荐</li>
+        </ul>
+    </section>
+    <section><a class="quickBuyMore" href="#" target="_blank">更多热门推荐</a></section>
+    <footer class="footer"><img class="seperator" src="include/img/separator.png" alt="">
+        <p class="copyright"><a href="http://www.6320.net.cn/" target="_blank">@秒杀助手II</a><a
+                href="http://www.6320.net.cn/42.html" target="_blank">使用帮助</a></p>
+    </footer>
+    <script type="text/x-template"
+        id="J-dataTemplate"><li class="quickBuy-item clearfix"><div class="quickBuy-item-gallery"><a href="{%link}"target="_blank"><img src="{%img}"alt=""width="80"height="80"/></a></div><ul class="quickBuy-item-detail"><li><a href="{%link}"target="_blank">{%title}</a></li><li class="quickBuy-item-prices {%priceHidden}">秒杀价：<span class="quickBuy-item-quickBuyPrice">{%miaoPrice}</span>元<span class="">原价：<del>{%price}</del>元</span></li></ul></li></script>
+    <script type="text/javascript" src="include/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="include/quick-buy-base.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+</body>
+
+</html>

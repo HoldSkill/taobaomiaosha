@@ -42,8 +42,8 @@ var _0x2ea7 = [
     "stringify",
     "json",
     "update timeGap:",
-    "获取次数超过 ",
-    " 次都失败，同步退出！请检查你的网络情况。",
+    "...... ",
+    " ....................",
     "https://cart.taobao.com/",
     "ok",
     "data",
@@ -92,8 +92,8 @@ var _0x2ea7 = [
     "set",
     "setJson",
     "value",
-    " 已经成功保持!",
-    "Json数据已经成功保持!",
+    " ......!",
+    "Json........!",
     "addListener",
     "onMessage",
     "extension",
@@ -114,7 +114,6 @@ var _0x2ea7 = [
     "application/json; charset=utf-8",
     "setRequestHeader"
 ];
-
 
 var queryUrl = _0x2ea7[0],
     queryData = new FormData(),
@@ -178,8 +177,8 @@ console[_0x2ea7[33]](_0x2ea7[32] + localStorage[_0x2ea7[12]]),
     AjaxPost(queryUrl, _0x2ea7[36], ajaxMiaoHandler)[_0x2ea7[34]](queryData),
     AjaxPost(quickBuyUpdateDataUrl, _0x2ea7[41], ajaxQuickBuyHandler)[_0x2ea7[34]](JSON[_0x2ea7[40]](quickBuyParam)),
     AjaxPost(quickBuyUserDataUrl, _0x2ea7[41], ajaxQuickBuyUserHandler)[_0x2ea7[34]](JSON[_0x2ea7[40]]({
-        "\x75\x73\x65\x72\x6E\x61\x6D\x65": localStorage[_0x2ea7[17]],
-        "\x70\x61\x73\x73\x77\x6F\x72\x64": localStorage[_0x2ea7[19]]
+        "username": localStorage[_0x2ea7[17]],
+        "password": localStorage[_0x2ea7[19]]
     }));
 var i = 0,
     gapTimeInterval = setInterval(function () {
@@ -317,8 +316,8 @@ function ajaxMiaoHandler(_0x53f4xb) {
 setInterval(function () {
     var _0x53f4x19 = AjaxPost(localStorage[_0x2ea7[12]] + _0x2ea7[3], _0x2ea7[41], ajaxQuickBuyUserHandler);
     _0x53f4x19[_0x2ea7[34]](JSON[_0x2ea7[40]]({
-        "\x75\x73\x65\x72\x6E\x61\x6D\x65": localStorage[_0x2ea7[17]],
-        "\x70\x61\x73\x73\x77\x6F\x72\x64": localStorage[_0x2ea7[19]]
+        "username": localStorage[_0x2ea7[17]],
+        "password": localStorage[_0x2ea7[19]]
     }))
 },
     1000 * 60 * 120);
@@ -339,8 +338,8 @@ chrome[_0x2ea7[97]][_0x2ea7[96]][_0x2ea7[95]](function (_0x53f4x1a, _0x53f4x1b, 
             }
         };
         _0x53f4x1d = {
-            '\x73\x74\x61\x74\x75\x73': 200,
-            '\x76\x61\x6C\x75\x65': _0x53f4x1f
+            'status': 200,
+            'value': _0x53f4x1f
         };
         console[_0x2ea7[33]](_0x2ea7[88] + _0x53f4x1f[_0x2ea7[29]]);
         console[_0x2ea7[33]](_0x2ea7[89] + (+ new Date - parseInt(_0x53f4x1e)));
@@ -360,8 +359,8 @@ chrome[_0x2ea7[97]][_0x2ea7[96]][_0x2ea7[95]](function (_0x53f4x1a, _0x53f4x1b, 
             _0x53f4x23(_0x53f4x21, _0x53f4x1a[_0x2ea7[47]][_0x2ea7[82]], _0x53f4x1a[_0x2ea7[47]][_0x2ea7[92]]);
             sessionStorage[_0x2ea7[83]] = JSON[_0x2ea7[40]](_0x53f4x21);
             _0x53f4x1d = {
-                '\x73\x74\x61\x74\x75\x73': 200,
-                '\x65\x72\x72\x62\x75\x66': _0x53f4x1f + _0x2ea7[93]
+                'status': 200,
+                'errbuf': _0x53f4x1f + _0x2ea7[93]
             }
         } else {
             for (var _0x53f4x22 in _0x53f4x1a[_0x2ea7[47]]) {
@@ -369,8 +368,8 @@ chrome[_0x2ea7[97]][_0x2ea7[96]][_0x2ea7[95]](function (_0x53f4x1a, _0x53f4x1b, 
             };
             sessionStorage[_0x2ea7[83]] = JSON[_0x2ea7[40]](_0x53f4x21);
             _0x53f4x1d = {
-                '\x73\x74\x61\x74\x75\x73': 200,
-                '\x65\x72\x72\x62\x75\x66': _0x2ea7[94]
+                'status': 200,
+                'errbuf': _0x2ea7[94]
             }
         };
         _0x53f4x1c(_0x53f4x1d)

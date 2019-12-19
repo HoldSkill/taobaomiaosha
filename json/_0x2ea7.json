@@ -1,3 +1,4 @@
+var _0x2ea7 = [
     "http://miao.enjoyapps.org/queryMiaoList.php",
     "http://erptest.xinyiglass.com:8000",
     "/quick-buy/fnd/quickbuy/getUpdateData",
@@ -41,8 +42,8 @@
     "stringify",
     "json",
     "update timeGap:",
-    "获取次数超过 ",
-    " 次都失败，同步退出！请检查你的网络情况。",
+    "...... ",
+    " ....................",
     "https://cart.taobao.com/",
     "ok",
     "data",
@@ -91,8 +92,8 @@
     "set",
     "setJson",
     "value",
-    " 已经成功保持!",
-    "Json数据已经成功保持!",
+    " ......!",
+    "Json........!",
     "addListener",
     "onMessage",
     "extension",
@@ -112,4 +113,4 @@
     "Content-type",
     "application/json; charset=utf-8",
     "setRequestHeader"
-
+];
