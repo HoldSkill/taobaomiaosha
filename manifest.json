@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+    "name": "淘宝秒杀助手",
+    "version": "1.0.0",
+    "description": "淘宝秒杀助手",
+    "browser_action": {
+        "default_icon": "img/icon.png",
+        "default_title": "这是一个示例Chrome插件",
+        "default_popup": "popup.html"
+    },
+    "background": {
+		"scripts": [
+			"background.js"
+		]
+	}
+}
